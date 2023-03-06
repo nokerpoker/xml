@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca  [
+<!ELEMENT biblioteca (trabajadores+,secciones*,socios*)>
+<!ATTLIST biblioteca codigo (libreria) #REQUIRED>
+
+<!ELEMENT trabajadores (trabajador)>
+<!ATTLIST trabajadores codigo (numEmpleado) #REQUIRED>
+
+<!ELEMENT trabajador (nombre*,apellido*,telefono+,email+)>
+<!ATTLIST trabajador codigo ID #REQUIRED>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ELEMENT secciones (literatura,ciencias,fantasia,noticias,informatica)>
+<!ATTLIST secciones codigo (libros) #REQUIRED>
+<!ELEMENT literatura (titulo+,autor*,numEjemplares+)>
+<!ELEMENT ciencias (titulo+,autor*,numEjemplares+)>
+<!ELEMENT fantasia (titulo+,autor*,numEjemplares+)>
+<!ELEMENT noticias (titulo+,autor*,numEjemplares+)>
+<!ELEMENT informatica (titulo+,autor*,numEjemplares+)>
+<!ATTLIST literatura secciones IDREF #REQUIRED>
+<!ATTLIST ciencias secciones IDREF #REQUIRED>
+<!ATTLIST fantasia secciones IDREF #REQUIRED>
+<!ATTLIST noticias secciones IDREF #REQUIRED>
+<!ATTLIST informatica secciones IDREF #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT numEjemplares (#PCDATA)>
+
+<!ELEMENT socios (abonados,ocasional)>
+<!ATTLIST socios codigo (altas) #REQUIRED>
+
+<!ELEMENT abonados (nombre*,apellido*,email+)>
+<!ATTLIST abonados codigo ID #REQUIRED>
+
+<!ELEMENT ocasional (nombre*,apellido*,email+)>
+<!ATTLIST ocasional codigo ID #IMPLIED>
+]>
+
+<biblioteca codigo="libreria">
+
+    <trabajadores codigo="numEmpleado">
+
+        <trabajador codigo="T1">
+            <nombre></nombre>
+            <apellido></apellido>
+            <telefono></telefono>
+            <email></email>
+        </trabajador>
+        <trabajador codigo="T2">
+            <nombre></nombre>
+            <apellido></apellido>
+            <telefono></telefono>
+            <email></email>
+        </trabajador>
+        <trabajador codigo="T3">
+            <nombre></nombre>
+            <apellido></apellido>
+            <telefono></telefono>
+            <email></email>
+        </trabajador>
+    </trabajadores>
+
+    <secciones codigo="libros">
+        <literatura secciones="libros">
+            <titulo></titulo>
+            <autor></autor>
+            <numEjemplares></numEjemplares>
+        </literatura>
+        <ciencias secciones="libros">
+            <titulo></titulo>
+            <autor></autor>
+            <numEjemplares></numEjemplares>
+        </ciencias>
+        <fantasia secciones="libros">
+            <titulo></titulo>
+            <autor></autor>
+            <numEjemplares></numEjemplares>
+        </fantasia>
+        <noticias secciones="libros">
+            <titulo></titulo>
+            <autor></autor>
+            <numEjemplares></numEjemplares>
+        </noticias>
+        <informatica secciones="libros">
+            <titulo></titulo>
+            <autor></autor>
+            <numEjemplares></numEjemplares>
+        </informatica>
+    </secciones>
+
+    <socios codigo="altas">
+        <abonados codigo="A1">
+            <nombre></nombre>
+            <apellido></apellido>
+            <email></email>
+        </abonados>
+        <ocasional codigo="N1">
+            <nombre></nombre>
+            <apellido></apellido>
+            <email></email>
+        </ocasional>
+    </socios>
+</biblioteca>
